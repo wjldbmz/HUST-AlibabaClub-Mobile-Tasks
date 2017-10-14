@@ -1,0 +1,33 @@
+package work1;
+//输出从0到某数字n范围内的所有素数
+import java.util.Scanner;
+public class work3 {
+    public static void main(String[] args) {
+        System.out.println("Please enter a number\n");
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int i;//因数
+        //int is=1;//判断变量
+        int m;//2-n的数字
+        for (m = 2; m <= n; m++) {
+            int is=1;
+            double root= Math.sqrt(m);//m的平方根root
+            if (root < 2) {                   //对于2和3的判断
+                for (i = 2; i < m; i++) {
+                    if (m % i == 0) {
+                        is = 0;
+                    }
+                }
+            } else {
+                for (i = 2; i <=root; i++) {
+                    if (m % i == 0) {
+                        is = 0;
+                    }
+                }
+            }
+            if (is == 1){
+                System.out.println(m + "\n");    //输出素数
+            }
+        }
+    }
+}
